@@ -84,7 +84,7 @@ const scrap = async () => {
     headless: false,
     args: [ '--ignore-certificate-errors' ],
     args: ['--unhandled-rejections=strict']
-
+	
   })
   const urlList = await getAllUrl(browser)
   const results = await Promise.all(
@@ -92,7 +92,7 @@ const scrap = async () => {
   )
   browser.close()
   let data = JSON.stringify(results, null, 2);
-  fs.writeFileSync('./Scrapping/json/confSeries5.json', data); 
+  fs.writeFileSync('./Scrapping/json/confSeries6.json', data); 
   return results
 }
 

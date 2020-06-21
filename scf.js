@@ -105,7 +105,7 @@ const self ={
 
         // Pour nettoyer le code
         // à vérifier lors de l'ajout en base de données
-            function strReplace(myStr){
+         /*    function strReplace(myStr){
                 if (myStr!=null){
                     if(myStr.includes('\n')){
                         myStr.replace(/\n/g, " ");
@@ -119,12 +119,12 @@ const self ={
                 } else {
                     return myStr
                 }   
-            }
+            } 
 
             title1 = strReplace(title1)
             title2 = strReplace(title2)
             description = strReplace(description)
-          
+            */
 
             results.push({
                 img1,
