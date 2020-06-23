@@ -1,6 +1,7 @@
 // 1 - Import de puppeteer
 const puppeteer = require('puppeteer')
 const fs = require('fs')
+var myGenericMongoClient = require('./my_generic_mongo_client');
 /*
 // 2 - Récupération des URLs de toutes les évènements
 */
@@ -69,9 +70,11 @@ const getDataFromUrl = async (browser, url) => {
             let numeroMois; 
              for(let i=0; i<mois.length; i++){
                if(month==mois[i]){
-                 console.log(mois[i]);
-     
-               numeroMois=i+1
+                    console.log(mois[i]);
+                    numeroMois=i+1
+                    if(numeroMois<10){
+                        numeroMois= "0"+numeroMois;   
+                    }
                };
              }
     
@@ -87,26 +90,24 @@ const getDataFromUrl = async (browser, url) => {
              let days = firstPartTwo[1];
              let separarateDays= days.split('-');
              let dayOne = separarateDays[0].trim();
+             if(dayOne<10){
+                dayOne= "0"+dayOne;   
+             }
+
              let dayTwo = separarateDays[1];
              if(dayTwo == undefined){
                dateFin=null;
              }else {
                dayTwo= dayTwo.trim();
+               if(dayTwo<10){
+                dayTwo= "0"+dayTwo;   
+             }
                dateFin = year +"-"+numeroMois+"-"+dayTwo;
              }			
-    
-     
-             dateDebut = year +"-"+numeroMois+"-"+dayOne;
+               dateDebut = year +"-"+numeroMois+"-"+dayOne;
 
 
             }
-    
-    
-    
-    
-    
-    
-    
     
     
         if ($('span.blinking').length) {
@@ -153,7 +154,12 @@ const getDataFromUrl = async (browser, url) => {
             let str = submitAbstract;
             let words = str.split('/');
             siteWeb=words[0]+"//"+words[1]+words[2];
-            _id=siteWeb;
+            if(_id != null) {
+              _id=words[0]+words[1]+words[2];
+            } 
+           
+           /*  _id=_id.replace(/ /gi, '');
+            _id = _id.replace(/\//g, ""); */
         }
         
 
@@ -164,7 +170,7 @@ const getDataFromUrl = async (browser, url) => {
         
 
       } catch (error) {
-        _id;
+        _id = null;
         title1; 
         title2; 
         date;
@@ -179,16 +185,24 @@ const getDataFromUrl = async (browser, url) => {
       if(_id==null){
         if(title1!=null){
             _id = title1;
+            if(_id != null) {
+              _id=_id.replace(/ /gi, '');
+              // _id = _id.replace(/\//g, "");
+            } 
         }else{
             _id = title2;
+            if(_id != null) {
+              _id=_id.replace(/ /gi, '');
+              // _id = _id.replace(/\//g, "");
+            } 
         }
     }
 
 
+
+
+  return { _id, title1, title2, date, dateDebut, dateFin, lieu, city, country, submitAbstract, register, usefullLinks, siteWeb }
       
-      return { _id, title1, title2, date, dateDebut, dateFin, lieu, city, country, submitAbstract, register, usefullLinks, siteWeb }
-      
-  
 
   })
 }
@@ -215,7 +229,9 @@ const scrap = async () => {
   browser.close()
   let data = JSON.stringify(results, null, 2);
   fs.writeFileSync('./Scrapping/json/confSeries6.json', data); 
-  return results
+  
+  update_in_mongoDB(results);
+  return results;
 }
 
 // 5 - Appel la fonction `scrap()`, affichage les résulats et catch les erreurs
@@ -225,3 +241,66 @@ scrap()
   })
   .catch(e => console.log(`error: ${e}`))
 
+
+
+  function update_in_mongoDB(responseJs) {
+    for (let i = 0; i < responseJs.length; i++) {
+      console.log("***** 1 Event found with this request ******")
+      var element = responseJs[i];
+      var event = new Object();
+      event._id=element._id;
+      event.title1 = element.title1;
+      event.title2 = element.title2;
+      event.date = element.date;
+      event.dateDebut = element.dateDebut
+      event.dateFin=element.dateFin; 
+      event.lieu = element.lieu
+      event.city = element.city;
+      event.country = element.country
+      event.submitAbstract = element.submitAbstract;
+      event.register = element.register; 
+      event.usefullLinks = element.usefullLinks; 
+      event.siteWeb = element.siteWeb;
+      
+        var resultNeg = []; 
+       
+           myGenericMongoClient.genericInsertOne('eventtest',
+          event,
+          function (err, res) {            
+            console.log(err + res);
+          }
+          );  
+        
+
+/*
+         myGenericMongoClient.genericUpdateOne('eventtest',
+        event._id ,
+        {
+        title1 : event.title1 , 
+        title2 : event.title2 , 
+        date : event.date, 
+        dateDebut : event.dateDebut,
+        dateFin : event.dateFin,
+        lieu : event.lieu,
+        city : event.city, 
+        country : event.country,
+        submitAbstract : event.submitAbstract, 
+        register :  event.register,
+        usefullLinks : event.usefullLinks, 
+        siteWeb :  event.siteWeb} ,
+        function(err,res){
+          if(err){
+            console.log("error : no event to update with id=" + event._id );
+          }else {
+
+            console.log("MAJ "+ event._id)
+          }
+             }
+        ); 
+              
+    */    
+    }
+}
+
+
+ 

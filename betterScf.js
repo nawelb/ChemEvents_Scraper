@@ -1,7 +1,8 @@
 //load in puppeteer 
 const puppeteer = require('puppeteer')
-const fs = require('fs')
-
+const fs = require('fs');
+const { count } = require('console');
+var myGenericMongoClient = require('./my_generic_mongo_client');
 
 const SUBSCF_URL = (scf) => 'https://www.societechimiquedefrance.fr/spip.php?page=manifestation#/${scf}/'
 
@@ -19,8 +20,7 @@ const self ={
         //Go to the subscf
         await self.page.goto(SUBSCF_URL(scf), {waitUntil: 'networkidle0'});  
         
-        //await self.page.screenshot({path:'./Scrapping/screenshots/page.png'});        
-        //await self.page.pdf({path: './pdfs/page.pdf'});
+
     }, 
 
     getResults: async(nr) =>{
@@ -42,6 +42,7 @@ const self ={
         } while (results.length < nr);   
         let data = JSON.stringify(results, null, 2);
         fs.writeFileSync('./Scrapping/json/scfEventsBetter.json', data);
+        update_in_mongoDB(results);
             return results.slice(0, nr)       
             
         },
@@ -58,8 +59,8 @@ const self ={
             let title2 = await element.$eval(('span'), node => node.innerText.trim());
             let date = await element.$eval(('div[class="caractencadre-spip date"]'), node => node.innerText.trim());
             let lieu = await element.$eval(('div[class="lieu"]'), node => node.innerText.trim());
-            let pays = null;
-            let ville = null;
+            let country = null;
+            let city = null;
             let img1 = null;
             let image1= null;
             let img2 = null; 
@@ -104,6 +105,8 @@ const self ={
                 siteWeb = await element.$eval('main > div > a[class="spip_out"]', node => node.getAttribute('href'));
                 if(siteWeb!=null){
                     _id=siteWeb;
+                    _id=_id.replace(/ /gi, '');
+                   _id = _id.replace(/\//g, "");
                 }
                 
             }catch{
@@ -118,8 +121,12 @@ const self ={
            if(_id==null){
                if(title1!=null){
                    _id=title1;
+                   _id=_id.replace(/ /gi, '');
+                   _id = _id.replace(/\//g, "");
                }else{
                 _id=title2;
+                _id=_id.replace(/ /gi, '');
+                _id = _id.replace(/\//g, "");
             }
             }
             if (date != null){
@@ -231,14 +238,14 @@ const self ={
             
             if(lieu!=null){
                 let dataSplit= lieu.split("(");
-                ville = dataSplit[0].trim();
-                console.log("pays "+pays)
+                city = dataSplit[0].trim();
+                console.log("country "+country)
 
                 let paysCrud = dataSplit[1];
                 
                 let paysTreatment = paysCrud.split(")")
-                pays=paysTreatment[0].trim();
-                console.log("pays "+pays)
+                country=paysTreatment[0].trim();
+                console.log("pays "+country)
             }
 
 
@@ -254,8 +261,8 @@ const self ={
                 dateDebut,
                 dateFin, 
                 lieu,
-                ville,
-                pays, 
+                city,
+                country, 
                 email, 
                 siteWeb, 
                 tags
@@ -275,3 +282,73 @@ const self ={
 }
 
 module.exports = self;
+
+function update_in_mongoDB(responseJs) {
+    for (let i = 0; i < responseJs.length; i++) {
+      console.log("***** 1 Event found with this request ******")
+      var element = responseJs[i];
+      var event = new Object();
+      event._id=element._id;
+      event.img1=element.img1;
+      event.img2=element.img2;
+      event.title1 = element.title1;
+      event.title2 = element.title2;
+      event.description = element.description;
+      event.date = element.dateE;
+      event.dateDebut = element.dateDebut
+      event.dateFin=element.dateFin; 
+      event.lieu = element.lieu
+      event.city = element.city;
+      event.country = element.country
+      event.submitAbstract = element.submitAbstract;
+      event.register = element.register; 
+      event.usefullLinks = element.usefullLinks; 
+      event.siteWeb = element.siteWeb;
+      event.tags = element.tags; 
+      event.email = element.email;
+      
+       
+          myGenericMongoClient.genericInsertOne('eventtest',
+          event,
+          function (err, res) {            
+           // console.log(err + res);
+           if(err){
+            console.log("error : no event to update with id=" + event._id );
+          }else {
+
+            console.log("MAJ "+ event._id)
+          }
+             }  
+       
+          );  
+        
+
+/*
+         myGenericMongoClient.genericUpdateOne('eventtest',
+        event._id ,
+        {
+        title1 : event.title1 , 
+        title2 : event.title2 , 
+        date : event.date, 
+        dateDebut : event.dateDebut,
+        dateFin : event.dateFin,
+        lieu : event.lieu,
+        city : event.city, 
+        country : event.country,
+        submitAbstract : event.submitAbstract, 
+        register :  event.register,
+        usefullLinks : event.usefullLinks, 
+        siteWeb :  event.siteWeb} ,
+        function(err,res){
+          if(err){
+            console.log("error : no event to update with id=" + event._id );
+          }else {
+
+            console.log("MAJ "+ event._id)
+          }
+             }
+        ); 
+              
+     */   
+    }
+}
