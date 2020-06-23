@@ -76,9 +76,9 @@ var genericFindList = function(collectionName,query,callback_with_err_and_array)
 var genericRemove = function(collectionName,query,callback_with_err_and_result) {
 	executeInMongoDbConnection( function(db) {
 		db.collection(collectionName).remove(query ,function(err, obj) {
-		if(err!=null) {
+		 if(err!=null) {
 			console.log("genericRemove error = " + err);
-				}
+				} 
 		//if (err) throw err;
 		console.log(obj.result.n + " document(s) deleted");
 		callback_with_err_and_result(err,obj.result);
@@ -89,6 +89,7 @@ var genericRemove = function(collectionName,query,callback_with_err_and_result) 
 var genericDeleteOneById = function(collectionName,mongoIdAsString,callback_with_err_and_booleanResult) {
 	executeInMongoDbConnection( function(db) {
 		db.collection(collectionName).deleteOne( { '_id' : new ObjectID(mongoIdAsString)} ,function(err, obj) {
+
 		if(err!=null) {
 			console.log("genericDeleteOneById error = " + err);
 			callback_with_err_and_booleanResult(err,false);

@@ -40,6 +40,14 @@ const getDataFromUrl = async (browser, url) => {
     let siteWeb=null;
     let city=null;
     let country=null;
+    let img1 = null; 
+    let img2=null; 
+    let description =null; 
+    let email = null; 
+    let tags = null; 
+
+
+
     let mois = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]; 
 
     try {
@@ -90,18 +98,14 @@ const getDataFromUrl = async (browser, url) => {
              let days = firstPartTwo[1];
              let separarateDays= days.split('-');
              let dayOne = separarateDays[0].trim();
-             if(dayOne<10){
-                dayOne= "0"+dayOne;   
-             }
 
              let dayTwo = separarateDays[1];
              if(dayTwo == undefined){
                dateFin=null;
-             }else {
-               dayTwo= dayTwo.trim();
-               if(dayTwo<10){
-                dayTwo= "0"+dayTwo;   
              }
+             else {
+               dayTwo= dayTwo.trim();
+
                dateFin = year +"-"+numeroMois+"-"+dayTwo;
              }			
                dateDebut = year +"-"+numeroMois+"-"+dayOne;
@@ -261,8 +265,13 @@ scrap()
       event.register = element.register; 
       event.usefullLinks = element.usefullLinks; 
       event.siteWeb = element.siteWeb;
+      event.img1 = element.img1; 
+      event.img2= element.img2;
+      event.description = element.description; 
+      event.email = element.email; 
+      event.tags = element.tags;
       
-        var resultNeg = []; 
+  
        
            myGenericMongoClient.genericInsertOne('eventtest',
           event,
