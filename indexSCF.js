@@ -1,5 +1,5 @@
 //const scf= require('./scf.js');
-const scf= require('./betterScf.js');
+const scf= require('./scfData.js');
 
 
 (async () => {

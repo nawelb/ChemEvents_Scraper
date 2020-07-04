@@ -208,13 +208,11 @@
     "siteWeb": null
   },
   {
-    "_id": "InternationalConferenceon",
-    "title1": "International Conference on",
-    "title2": "Dialysis",
-    "date": "September 22-23, 2020",
-    "dateDebut": "2020-09-22",
-    "dateFin": "2020-09-23",
-    "lieu": "Webinar",
+    "_id": null,
+    "title2": null,
+    "date": null,
+    "dateDebut": null,
+    "dateFin": null,
     "city": null,
     "country": null,
     "submitAbstract": null,
@@ -538,19 +536,17 @@
     "siteWeb": "https://physicalchemistry.annualcongress.com"
   },
   {
-    "_id": "11thWorldCongresson",
-    "title1": "11th World Congress on",
-    "title2": "Chromatography",
-    "date": "April 27-28, 2021",
-    "dateDebut": "2021-04-27",
-    "dateFin": "2021-04-28",
-    "lieu": "April 27-28, 2021 Amersfoort, Netherlands",
-    "city": "Amersfoort",
-    "country": "Netherlands",
-    "submitAbstract": "https://chromatography.conferenceseries.com/abstract-submission.php",
-    "register": "https://chromatography.conferenceseries.com/registration.php",
+    "_id": null,
+    "title2": null,
+    "date": null,
+    "dateDebut": null,
+    "dateFin": null,
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://chromatography.conferenceseries.com"
+    "siteWeb": null
   },
   {
     "_id": "7thEditionofInternationalConferenceon",

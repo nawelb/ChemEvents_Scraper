@@ -34,7 +34,6 @@ var executeInMongoDbConnection = function(callback_with_db) {
 	//currentDb = db; //with mongodb client v2.x
 	currentDb = db.db(dbName);//with mongodb client >= v3.x
 	callback_with_db(currentDb);
-	//closeCurrentMongoDBConnection;
 	db.close();
 	});
   }else{

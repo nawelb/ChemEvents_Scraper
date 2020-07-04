@@ -1,5 +1,5 @@
-node indexSCF.js &
-node betterConfSeriesData.js &
+node indexSCF.js
+node conferenceSeriesData.js
 
 #start "scf" scf.bat
 #timeout /t 60
