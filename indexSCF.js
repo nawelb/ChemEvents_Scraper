@@ -7,6 +7,6 @@ const scf= require('./betterScf.js');
 
     //let results = await scf.getResults(40);
 
-   debugger;
+   //debugger;
 
 })();

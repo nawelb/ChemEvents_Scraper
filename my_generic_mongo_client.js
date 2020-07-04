@@ -20,6 +20,7 @@ var setMongoDbName = function(mongoDbName){
 var closeCurrentMongoDBConnection = function(){
 	currentDb.close();
 	currentDb=null;
+	console.log("closed DB")
 }
 
 var executeInMongoDbConnection = function(callback_with_db) {
@@ -33,6 +34,8 @@ var executeInMongoDbConnection = function(callback_with_db) {
 	//currentDb = db; //with mongodb client v2.x
 	currentDb = db.db(dbName);//with mongodb client >= v3.x
 	callback_with_db(currentDb);
+	//closeCurrentMongoDBConnection;
+	db.close();
 	});
   }else{
 	callback_with_db(currentDb);  
@@ -49,6 +52,7 @@ var genericUpdateOne = function(collectionName,id,changes,callback_with_err_and_
 			callback_with_err_and_results(err,results);
 			});
 		});
+	
 };
 
 
@@ -77,8 +81,10 @@ var genericInsertOne = function(collectionName,newOne,callback_with_err_and_newI
 		}
 		callback_with_err_and_newId(err,newId);
 		});
+		
 	});
 };
+
 
 var genericFindList = function(collectionName,query,callback_with_err_and_array) {
 	executeInMongoDbConnection( function(db) {

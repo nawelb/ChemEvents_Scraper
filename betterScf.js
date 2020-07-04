@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer')
 const fs = require('fs');
 const { count } = require('console');
 var myGenericMongoClient = require('./my_generic_mongo_client');
+const { MongoClient } = require('mongodb');
 
 const SUBSCF_URL = (scf) => 'https://www.societechimiquedefrance.fr/spip.php?page=manifestation#/${scf}/'
 
@@ -21,10 +22,10 @@ const self ={
         await self.page.goto(SUBSCF_URL(scf), {waitUntil: 'networkidle0'});  
 
         //Get results
-        await self.getResults(40);
+        await self.getResults(30);
         await self.page.close();
         await self.browser.close();
-console.log("finish!!!!!!!!!!!!!!!")
+        console.log("finish!!!!!!!!!!!!!!!")
 
     }, 
 
@@ -50,9 +51,11 @@ console.log("finish!!!!!!!!!!!!!!!")
         
         fs.writeFileSync('./Scrapping/json/scfEventsBetter.json', data);
         update_in_mongoDB(results);
-        
-        return results.slice(0, nr)     
-            
+        console.log("finish")
+
+     
+
+        return results;     
         },
 
     parseResult: async () => {
@@ -284,6 +287,7 @@ console.log("finish!!!!!!!!!!!!!!!")
         return results;
         
         
+        
     
     }
  
@@ -319,18 +323,21 @@ function update_in_mongoDB(responseJs) {
           myGenericMongoClient.genericInsertOne('eventtest',
           event,
           function (err, res) {            
-           // console.log(err + res);
-           if(err){
+          if(err){
             console.log("error : no event to update with id=" + event._id );
+            
+
           }else {
 
             console.log("MAJ "+ event._id)
+           
+
           }
              }  
        
           );  
-        }    
-
+        }   
+       
 /*
          myGenericMongoClient.genericUpdateOne('eventtest',
         event._id ,
