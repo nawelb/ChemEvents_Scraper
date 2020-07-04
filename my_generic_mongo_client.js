@@ -1,11 +1,12 @@
+require('dotenv').config()
 //myGenericMongoClient module (with MongoDB/MongoClient)
 var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 var assert = require('assert');
 
 //var mongoDbUrl = 'mongodb://127.0.0.1:27017/test'; //by default
-var mongoDbUrl = 'mongodb+srv://Nawel:MongoDB@mongodbatlascluster-t0n3g.mongodb.net/test?retryWrites=true&w=majority'; //on MongoDB Atlas 
-var dbName = "test" //by default
+var mongoDbUrl = process.env.DB_URL; //on MongoDB Atlas 
+var dbName = process.env.DB_NAME; //by default
 var currentDb=null; //current MongoDB connection
 
 var setMongoDbUrl = function(dbUrl){
@@ -49,6 +50,21 @@ var genericUpdateOne = function(collectionName,id,changes,callback_with_err_and_
 			});
 		});
 };
+
+
+var genericUpdateOneScrap = function(collectionName,id,changes,callback_with_err_and_results) {
+	executeInMongoDbConnection( function(db) {
+		db.collection(collectionName).updateOne( { '_id' : id }, { $set : changes } ,{upsert: true}, 
+			function(err, results) {
+				if(err!=null) {
+					console.log("genericUpdateOne error = " + err);
+				}
+			callback_with_err_and_results(err,results);
+			});
+		});
+};
+
+
 
 var genericInsertOne = function(collectionName,newOne,callback_with_err_and_newId) {
 	executeInMongoDbConnection( function(db) {
@@ -123,3 +139,4 @@ exports.setMongoDbUrl = setMongoDbUrl;
 exports.setMongoDbName =setMongoDbName;
 exports.executeInMongoDbConnection = executeInMongoDbConnection;
 exports.closeCurrentMongoDBConnection = closeCurrentMongoDBConnection;
+exports.genericUpdateOneScrap = genericUpdateOneScrap;

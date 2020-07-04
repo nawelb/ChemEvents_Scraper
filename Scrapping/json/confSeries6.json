@@ -274,13 +274,13 @@
     "date": "October 07-08, 2020",
     "dateDebut": "2020-10-07",
     "dateFin": "2020-10-08",
-    "lieu": "October 07-08, 2020 Vienna, Austria",
-    "city": "Vienna",
-    "country": "Austria",
-    "submitAbstract": "https://separationtechniques.chemistryconferences.org/abstract-submission.php",
-    "register": "https://separationtechniques.chemistryconferences.org/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://separationtechniques.chemistryconferences.org"
+    "siteWeb": null
   },
   {
     "_id": "7thInternationalConferenceon",
@@ -289,13 +289,13 @@
     "date": "October 07-08, 2020",
     "dateDebut": "2020-10-07",
     "dateFin": "2020-10-08",
-    "lieu": "October 07-08, 2020 Vienna, Austria",
-    "city": "Vienna",
-    "country": "Austria",
-    "submitAbstract": "https://physicalchemistry.chemistryconferences.org/abstract-submission.php",
-    "register": "https://physicalchemistry.chemistryconferences.org/registration.php",
-    "usefullLinks": "https://d2cax41o7ahm5l.cloudfront.net/cs/pdfs/physical-chemistry-2020-49209-tentative-program11746.pdf",
-    "siteWeb": "https://physicalchemistry.chemistryconferences.org"
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
+    "usefullLinks": null,
+    "siteWeb": null
   },
   {
     "_id": "InternationalConferenceon",
@@ -304,13 +304,13 @@
     "date": "October 12-13, 2020",
     "dateDebut": "2020-10-12",
     "dateFin": "2020-10-13",
-    "lieu": "October 12-13, 2020 Prague, Czech Republic",
-    "city": "Prague",
-    "country": "Czech Republic",
-    "submitAbstract": "https://petrochemistry.annualcongress.com/abstract-submission.php",
-    "register": "https://petrochemistry.annualcongress.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://petrochemistry.annualcongress.com"
+    "siteWeb": null
   },
   {
     "_id": "15thInternationalConferenceon",
@@ -319,13 +319,13 @@
     "date": "October 12-13, 2020",
     "dateDebut": "2020-10-12",
     "dateFin": "2020-10-13",
-    "lieu": "October 12-13, 2020 Perth, Australia",
-    "city": "Perth",
-    "country": "Australia",
-    "submitAbstract": "https://neurology.annualcongress.com/abstract-submission.php",
-    "register": "https://neurology.annualcongress.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://neurology.annualcongress.com"
+    "siteWeb": null
   },
   {
     "_id": "9thGlobalSummiton",
@@ -334,13 +334,13 @@
     "date": "October 16-17, 2020",
     "dateDebut": "2020-10-16",
     "dateFin": "2020-10-17",
-    "lieu": "October 16-17, 2020 Munich, Germany",
-    "city": "Munich",
-    "country": "Germany",
-    "submitAbstract": "https://massspectra.com/abstract-submission.php",
-    "register": "https://massspectra.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://massspectra.com"
+    "siteWeb": null
   },
   {
     "_id": "InternationalConferenceon",
@@ -349,13 +349,13 @@
     "date": "October 19-20, 2020",
     "dateDebut": "2020-10-19",
     "dateFin": "2020-10-20",
-    "lieu": "October 19-20, 2020 Tokyo, Japan",
-    "city": "Tokyo",
-    "country": "Japan",
-    "submitAbstract": "https://appliedchemistry.conferenceseries.com/abstract-submission.php",
-    "register": "https://appliedchemistry.conferenceseries.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://appliedchemistry.conferenceseries.com"
+    "siteWeb": null
   },
   {
     "_id": "4thWorldCongresson",
@@ -364,13 +364,13 @@
     "date": "October 26-27, 2020",
     "dateDebut": "2020-10-26",
     "dateFin": "2020-10-27",
-    "lieu": "October 26-27, 2020 Vienna, Austria",
-    "city": "Vienna",
-    "country": "Austria",
-    "submitAbstract": "https://polymerchemistrycongress.insightconferences.com/abstract-submission.php",
-    "register": "https://polymerchemistrycongress.insightconferences.com/registration.php",
-    "usefullLinks": "https://d2cax41o7ahm5l.cloudfront.net/cs/pdfs/polymer-chemistry-2020-54856-sponsorship80323.pdf",
-    "siteWeb": "https://polymerchemistrycongress.insightconferences.com"
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
+    "usefullLinks": null,
+    "siteWeb": null
   },
   {
     "_id": "2ndInternationalConferenceon",
@@ -379,13 +379,13 @@
     "date": "October 29-30, 2020",
     "dateDebut": "2020-10-29",
     "dateFin": "2020-10-30",
-    "lieu": "October 29-30, 2020 Cape Town, South Africa",
-    "city": "Cape Town",
-    "country": "South Africa",
-    "submitAbstract": "https://biochem.biochemistryconferences.com/abstract-submission.php",
-    "register": "https://biochem.biochemistryconferences.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://biochem.biochemistryconferences.com"
+    "siteWeb": null
   },
   {
     "_id": "4thInternationalConferenceon",
@@ -394,13 +394,13 @@
     "date": "November 09-10, 2020",
     "dateDebut": "2020-11-09",
     "dateFin": "2020-11-10",
-    "lieu": "November 09-10, 2020 Prague, Czech Republic",
-    "city": "Prague",
-    "country": "Czech Republic",
-    "submitAbstract": "https://mentalhealth.global-summit.com/abstract-submission.php",
-    "register": "https://mentalhealth.global-summit.com/registration.php",
-    "usefullLinks": "https://d2cax41o7ahm5l.cloudfront.net/cs/pdfs/mentalhealth-glob-sub-2020-54548-sponsorship11975.pdf",
-    "siteWeb": "https://mentalhealth.global-summit.com"
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
+    "usefullLinks": null,
+    "siteWeb": null
   },
   {
     "_id": "8thInternationalConferenceon",
@@ -409,13 +409,13 @@
     "date": "November 16-17, 2020",
     "dateDebut": "2020-11-16",
     "dateFin": "2020-11-17",
-    "lieu": "November 16-17, 2020 Lisbon, Portugal",
-    "city": "Lisbon",
-    "country": "Portugal",
-    "submitAbstract": "https://catalysis.conferenceseries.com/abstract-submission.php",
-    "register": "https://catalysis.conferenceseries.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://catalysis.conferenceseries.com"
+    "siteWeb": null
   },
   {
     "_id": "11thInternationalConferenceon",
@@ -424,13 +424,13 @@
     "date": "November 19-20, 2020",
     "dateDebut": "2020-11-19",
     "dateFin": "2020-11-20",
-    "lieu": "November 19-20, 2020 Berlin, Germany",
-    "city": "Berlin",
-    "country": "Germany",
-    "submitAbstract": "https://chemistry.conferenceseries.com/abstract-submission.php",
-    "register": "https://chemistry.conferenceseries.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://chemistry.conferenceseries.com"
+    "siteWeb": null
   },
   {
     "_id": "21stInternationalConferenceon",
@@ -439,13 +439,13 @@
     "date": "November 23-24, 2020",
     "dateDebut": "2020-11-23",
     "dateFin": "2020-11-24",
-    "lieu": "November 23-24, 2020 London, UK",
-    "city": "London",
-    "country": "UK",
-    "submitAbstract": "https://industrialchemistry.chemistryconferences.org/abstract-submission.php",
-    "register": "https://industrialchemistry.chemistryconferences.org/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://industrialchemistry.chemistryconferences.org"
+    "siteWeb": null
   },
   {
     "_id": "InternationalSummiton",
@@ -454,13 +454,13 @@
     "date": "November 23-24, 2020",
     "dateDebut": "2020-11-23",
     "dateFin": "2020-11-24",
-    "lieu": "November 23-24, 2020 Dubai, UAE",
-    "city": "Dubai",
-    "country": "UAE",
-    "submitAbstract": "https://hiv-aids.conferenceseries.com/abstract-submission.php",
-    "register": "https://hiv-aids.conferenceseries.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://hiv-aids.conferenceseries.com"
+    "siteWeb": null
   },
   {
     "_id": "4thInternationalDermatologyandCosmetologyCongress",
@@ -469,13 +469,13 @@
     "date": "November 25-26, 2020",
     "dateDebut": "2020-11-25",
     "dateFin": "2020-11-26",
-    "lieu": "November 25-26, 2020 Singapore City, Singapore",
-    "city": "Singapore City",
-    "country": "Singapore",
-    "submitAbstract": "https://cosmeticdermatology.conferenceseries.com/abstract-submission.php",
-    "register": "https://cosmeticdermatology.conferenceseries.com/registration.php",
-    "usefullLinks": "https://d2cax41o7ahm5l.cloudfront.net/cs/pdfs/cosmetic-dermatology-2020-53848-sponsorship30297.pdf",
-    "siteWeb": "https://cosmeticdermatology.conferenceseries.com"
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
+    "usefullLinks": null,
+    "siteWeb": null
   },
   {
     "_id": "GlobalMeeton",
@@ -484,13 +484,13 @@
     "date": "December 07-08, 2020",
     "dateDebut": "2020-12-07",
     "dateFin": "2020-12-08",
-    "lieu": "December 07-08, 2020 Sydney, Australia",
-    "city": "Sydney",
-    "country": "Australia",
-    "submitAbstract": "https://greenchemistry.materialsconferences.com/abstract-submission.php",
-    "register": "https://greenchemistry.materialsconferences.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://greenchemistry.materialsconferences.com"
+    "siteWeb": null
   },
   {
     "_id": "10thWorldCongresson",
@@ -499,13 +499,13 @@
     "date": "December 07-08, 2020",
     "dateDebut": "2020-12-07",
     "dateFin": "2020-12-08",
-    "lieu": "December 07-08, 2020 Paris, France",
-    "city": "Paris",
-    "country": "France",
-    "submitAbstract": "https://analyticaltechniques.annualcongress.com/abstract-submission.php",
-    "register": "https://analyticaltechniques.annualcongress.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://analyticaltechniques.annualcongress.com"
+    "siteWeb": null
   },
   {
     "_id": "Internationalconferenceon",
@@ -514,13 +514,13 @@
     "date": "December 14-15, 2020",
     "dateDebut": "2020-12-14",
     "dateFin": "2020-12-15",
-    "lieu": "December 14-15, 2020 Tokyo, Japan",
-    "city": "Tokyo",
-    "country": "Japan",
-    "submitAbstract": "https://chemicals.insightconferences.com/abstract-submission.php",
-    "register": "https://chemicals.insightconferences.com/registration.php",
+    "lieu": "Webinar",
+    "city": null,
+    "country": null,
+    "submitAbstract": null,
+    "register": null,
     "usefullLinks": null,
-    "siteWeb": "https://chemicals.insightconferences.com"
+    "siteWeb": null
   },
   {
     "_id": "7thInternationalConferenceon",

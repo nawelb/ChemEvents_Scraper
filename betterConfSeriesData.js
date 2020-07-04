@@ -98,13 +98,16 @@ const getDataFromUrl = async (browser, url) => {
              let days = firstPartTwo[1];
              let separarateDays= days.split('-');
              let dayOne = separarateDays[0].trim();
+             dayOne=dayOne.replace("00", "0");
 
              let dayTwo = separarateDays[1];
+
              if(dayTwo == undefined){
                dateFin=null;
              }
              else {
                dayTwo= dayTwo.trim();
+               dayOne=dayOne.replace("00", "0");
 
                dateFin = year +"-"+numeroMois+"-"+dayTwo;
              }			
@@ -247,9 +250,9 @@ scrap()
 
 
 
-  function update_in_mongoDB(responseJs) {
+  function update_in_mongoDB(responseJs, res) {
     for (let i = 0; i < responseJs.length; i++) {
-      console.log("***** 1 Event found with this request ******")
+      //console.log("***** 1 Event found with this request ******")
       var element = responseJs[i];
       var event = new Object();
       event._id=element._id;
@@ -270,16 +273,41 @@ scrap()
       event.description = element.description; 
       event.email = element.email; 
       event.tags = element.tags;
-      
+      console.log("***** "+ event.title1+" "+event.title2+ " ******")
   
-       
-           myGenericMongoClient.genericInsertOne('eventtest',
-          event,
-          function (err, res) {            
-            console.log(err + res);
-          }
-          );  
+      if(event.title1 != null && event.title2 != null && event.dateDebut != null){
+
+        myGenericMongoClient.genericInsertOne('eventtest',
+        event,
+        function (err, res) {            
+          console.log(err + res);
+        }
+        );  
+        /* myGenericMongoClient.genericUpdateOneScrap('eventtest', event._id, 
+        {
+          title1 : event.title1 , 
+          title2 : event.title2 , 
+          date : event.date, 
+          dateDebut : event.dateDebut,
+          dateFin : event.dateFin,
+          lieu : event.lieu,
+          city : event.city, 
+          country : event.country,
+          submitAbstract : event.submitAbstract, 
+          register :  event.register,
+          usefullLinks : event.usefullLinks, 
+          siteWeb :  event.siteWeb} ,
+          function(err,event){
+            if(err){
+              console.log("error : no event to update with id=" + event._id );
+            }else {
+              send(event);
+              console.log("MAJ "+ event._id)
+            }
+               }
+          ); */ 
         
+      }
 
 /*
          myGenericMongoClient.genericUpdateOne('eventtest',

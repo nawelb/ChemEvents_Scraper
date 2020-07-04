@@ -19,7 +19,12 @@ const self ={
       
         //Go to the subscf
         await self.page.goto(SUBSCF_URL(scf), {waitUntil: 'networkidle0'});  
-        
+
+        //Get results
+        await self.getResults(40);
+        await self.page.close();
+        await self.browser.close();
+console.log("finish!!!!!!!!!!!!!!!")
 
     }, 
 
@@ -39,11 +44,14 @@ const self ={
             let new_results = await self.parseResult();
             results.push(...new_results)               
            
-        } while (results.length < nr);   
+        } while (results.length < nr);
+          
         let data = JSON.stringify(results, null, 2);
+        
         fs.writeFileSync('./Scrapping/json/scfEventsBetter.json', data);
         update_in_mongoDB(results);
-            return results.slice(0, nr)       
+        
+        return results.slice(0, nr)     
             
         },
 
@@ -307,7 +315,7 @@ function update_in_mongoDB(responseJs) {
       event.tags = element.tags; 
       event.email = element.email;
       
-       
+    if(event.title1 != null && event.title2 != null && event.dateDebut != null){
           myGenericMongoClient.genericInsertOne('eventtest',
           event,
           function (err, res) {            
@@ -321,7 +329,7 @@ function update_in_mongoDB(responseJs) {
              }  
        
           );  
-        
+        }    
 
 /*
          myGenericMongoClient.genericUpdateOne('eventtest',
