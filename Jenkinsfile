@@ -1,4 +1,7 @@
 node () {
+	stage ('firstTry - Checkout') {
+ 	 checkout scm
+	 }
 	stage ('firstTry - Build') {
 		bat """ 
 		echo start
