@@ -12,9 +12,7 @@ const self ={
     browser: null,
     page: null, 
     initialize: async (scf) => {
-        self.browser = await puppeteer.launch({
-            headless: false
-        });
+        self.browser = await puppeteer.launch();
 
         self.page = await self.browser.newPage();
       
