@@ -12,7 +12,9 @@ const self ={
     browser: null,
     page: null, 
     initialize: async (scf) => {
-        self.browser = await puppeteer.launch();
+        self.browser = await puppeteer.launch({
+		args: ['--no-sandbox', '--disable-setuid-sandbox']
+		});
 
         self.page = await self.browser.newPage();
       
