@@ -1,6 +1,5 @@
 # ChemEventz - Scraper
-&nbsp;
-______________________________________
+_______________________________
 &nbsp;
 ## About ChemEventz!
 
@@ -60,7 +59,7 @@ Create new folder
 
 ```sh
 $ git clone https://github.com/nawelb/ChemEvents_Scraper.git
-$ cd ChemEvents_Back_NodeJS
+$ cd ChemEvents_Scraper
 $ npm install
 ```
 then, create .env file in root directory and add :
@@ -70,12 +69,12 @@ then, create .env file in root directory and add :
 
 ### Execute scraping
 
-run this: 
+run: 
 ```sh
 $ run server.bat
 ```
 
-or, run this:
+or, run:
 ```sh
 $ node indexSCF.js
 $ node conferenceSeriesData.js
