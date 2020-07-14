@@ -1,6 +1,6 @@
 # ChemEventz - Scraper
-_______________________________
 &nbsp;
+_______________________________
 ## About ChemEventz!
 
 ChemEventz is a web application that tracks chemical events around the world. 
@@ -13,7 +13,7 @@ How to make these meetings easier?
 
 
 ChemEventz is divided into 5 parts available in my Github account  [public repositories][Git]
-  - [ChemEventz - scraper][GitScrap]  
+  - [ChemEventz - Scraper][GitScrap]  
   - [ChemEventz - NodeJS - API][GitNodeJS] 
   - [ChemEventz - Spring Boot Microservice Authentication][GitSpringAuth]
   - [ChemEventz - Spring Boot Microservice Events][GitSpringEvents]
@@ -22,18 +22,18 @@ ChemEventz is divided into 5 parts available in my Github account  [public repos
   
 ### Tech Dev
 
-Dillinger uses a number of open source projects to work properly:
+ChemEventz uses a number of open source projects to work properly:
 
 * [Angular] - HTML enhanced for web apps!
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
+* [node.js] - v12 for the backend
+* [Express] - fast node.js network app framework 
 * [Spring Boot] - focus on application-level business logic
-* [MongoDB]
-* [Mysql]
+* [MongoDB] - non-relationnal database for events storage
+* [Mysql] - relational dataBase for users data storage
 
 ### Tech Prod
 
-Different technologies used to deploy ChemEventz project:
+Technologies used to deploy ChemEvents project:
 
 * [Heroku] - Deploy Spring and NodeJS microservices
 * [AWS S3] - Deploy Angular microservice
@@ -46,7 +46,7 @@ ______________________________________
 # ChemEventz - Scraper!
 
 ### Tech Dev
-* [puppeteer] - Node library for Chrome control
+* [Puppeteer] - Node library for Chrome control
 * [MongoDB] - collecte all scraped events
 
 
@@ -55,15 +55,14 @@ ______________________________________
 
 ChemEventz requires [Node.js](https://nodejs.org/) v12 to run.
 
-Create new folder
-
 ```sh
 $ git clone https://github.com/nawelb/ChemEvents_Scraper.git
 $ cd ChemEvents_Scraper
 $ npm install
 ```
+
 then, create .env file in root directory and add :
- - DB_NAME : as name of your database 
+ - DB_NAME : as name of your MongoDB database 
  - DB_URL : as url of MongoDB Atlas 
 
 
@@ -107,4 +106,5 @@ In this project, were scraped two websites:
   [AWS RDS]: <https://aws.amazon.com/fr/rds/>
   [Mongo Atlas]: <https://www.mongodb.com/cloud/atlas>
   [MongoDB]: <https://www.mongodb.com/fr>
+  [MySQL]:<https://www.mysql.com/fr/downloads/>
   [puppeteer]: <https://github.com/puppeteer/puppeteer>
