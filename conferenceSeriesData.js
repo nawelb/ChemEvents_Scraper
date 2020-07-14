@@ -225,7 +225,7 @@ bloque de programme tant que toutes les promesses ne sont pas résolues
 const scrap = async () => {
   const browser = await puppeteer.launch({ 
     headless: false,
-	args: ['--no-sandbox', '--disable-setuid-sandbox'],
+	//args: ['--no-sandbox', '--disable-setuid-sandbox'],
     args: [ '--ignore-certificate-errors' ],
     args: ['--unhandled-rejections=strict']
 	
