@@ -50,8 +50,8 @@ ______________________________________
 * [MongoDB] - collecte all scraped events
 
 
-
 ### Installation
+
 
 ChemEventz requires [Node.js](https://nodejs.org/) v12 to run.
 
@@ -61,10 +61,19 @@ $ cd ChemEvents_Scraper
 $ npm install
 ```
 
+
+
+Create dataBase in mongoDB Atlas.
+	
+
 then, create .env file in root directory and add :
  - DB_NAME : as name of your MongoDB database 
  - DB_URL : as url of MongoDB Atlas 
 
+CHANGE TWO FILES : 
+	conferenceSeriesData.js ligne 281  : change 'eventtest' -> by the name of your database Collection 
+	scfData.js ligne 324  : change 'eventtest' -> by the name of your database Collection 
+	
 
 ### Execute scraping
 
