@@ -71,8 +71,8 @@ then, create .env file in root directory and add :
  - DB_URL : as url of MongoDB Atlas 
 
 CHANGE TWO FILES : 
-	conferenceSeriesData.js ligne 281  : change 'eventtest' -> by the name of your database Collection 
-	scfData.js ligne 324  : change 'eventtest' -> by the name of your database Collection 
+	conferenceSeriesData.js ligne 275  : change 'eventtest' -> by the name of your database Collection 
+	scfData.js ligne 304  : change 'eventtest' -> by the name of your database Collection 
 	
 
 ### Execute scraping
