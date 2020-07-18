@@ -1,10 +1,8 @@
 require('dotenv').config()
 //myGenericMongoClient module (with MongoDB/MongoClient)
 var MongoClient = require('mongodb').MongoClient;
-var ObjectID = require('mongodb').ObjectID;
 var assert = require('assert');
 
-//var mongoDbUrl = 'mongodb://127.0.0.1:27017/test'; //by default
 var mongoDbUrl = process.env.DB_URL; //on MongoDB Atlas 
 var dbName = process.env.DB_NAME; //by default
 var currentDb=null; //current MongoDB connection
@@ -85,61 +83,10 @@ var genericInsertOne = function(collectionName,newOne,callback_with_err_and_newI
 };
 
 
-var genericFindList = function(collectionName,query,callback_with_err_and_array) {
-	executeInMongoDbConnection( function(db) {
-		var cursor = db.collection(collectionName).find(query);
-		cursor.toArray(function(err, arr) {
-			callback_with_err_and_array(err,arr);
-		});
-   });
-};
 
-var genericRemove = function(collectionName,query,callback_with_err_and_result) {
-	executeInMongoDbConnection( function(db) {
-		db.collection(collectionName).remove(query ,function(err, obj) {
-		 if(err!=null) {
-			console.log("genericRemove error = " + err);
-				} 
-		//if (err) throw err;
-		console.log(obj.result.n + " document(s) deleted");
-		callback_with_err_and_result(err,obj.result);
-		});
-   });
-};
-
-var genericDeleteOneById = function(collectionName,mongoIdAsString,callback_with_err_and_booleanResult) {
-	executeInMongoDbConnection( function(db) {
-		db.collection(collectionName).deleteOne( { '_id' : new ObjectID(mongoIdAsString)} ,function(err, obj) {
-
-		if(err!=null) {
-			console.log("genericDeleteOneById error = " + err);
-			callback_with_err_and_booleanResult(err,false);
-			}
-		else 
-			console.log(" 1 document deleted");
-		    callback_with_err_and_booleanResult(err,true);
-		});
-   });
-};
-
-var genericFindOne = function(collectionName,query, callback_with_err_and_item) {
-	executeInMongoDbConnection( function(db) {
-		db.collection(collectionName).findOne(query , function(err, item) {
-			if(err!=null) {
-				console.log("genericFindById error = " + err);
-		}
-		assert.equal(null, err);
-		callback_with_err_and_item(err,item);
-		});
-    });
-};
 
 exports.genericUpdateOne = genericUpdateOne;
 exports.genericInsertOne = genericInsertOne;
-exports.genericFindList = genericFindList;
-exports.genericFindOne = genericFindOne;
-exports.genericRemove = genericRemove;
-exports.genericDeleteOneById = genericDeleteOneById;
 exports.setMongoDbUrl = setMongoDbUrl;
 exports.setMongoDbName =setMongoDbName;
 exports.executeInMongoDbConnection = executeInMongoDbConnection;

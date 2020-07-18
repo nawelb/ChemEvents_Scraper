@@ -3,6 +3,7 @@ const scf= require('./scfData.js');
 
 
 (async () => {
+    //await scf.initialize();
     await scf.initialize('node');
 
     //let results = await scf.getResults(40);

@@ -1,35 +1,5 @@
 [
   {
-    "_id": "10thEuropeanChemistryCongress",
-    "title1": null,
-    "title2": "10th European Chemistry Congress",
-    "date": "July 15-16, 2020",
-    "dateDebut": "2020-07-15",
-    "dateFin": "2020-07-16",
-    "lieu": "Webinar",
-    "city": null,
-    "country": null,
-    "submitAbstract": null,
-    "register": null,
-    "usefullLinks": null,
-    "siteWeb": null
-  },
-  {
-    "_id": "InternationalConferenceon",
-    "title1": "International Conference on",
-    "title2": "Chemistry",
-    "date": "July 15-16, 2020",
-    "dateDebut": "2020-07-15",
-    "dateFin": "2020-07-16",
-    "lieu": "Webinar",
-    "city": null,
-    "country": null,
-    "submitAbstract": null,
-    "register": null,
-    "usefullLinks": null,
-    "siteWeb": null
-  },
-  {
     "_id": "11thInternationalConferenceon",
     "title1": "11th International Conference on",
     "title2": "Chemistry",
@@ -45,9 +15,9 @@
     "siteWeb": null
   },
   {
-    "_id": "13thGlobalExpertsMeetingon",
-    "title1": "13th Global Experts Meeting on",
-    "title2": "Chemistry",
+    "_id": "22ndWorldCongresson",
+    "title1": "22nd World Congress on",
+    "title2": "Analytical and Bioanalytical Chemistry",
     "date": "August 17-18, 2020",
     "dateDebut": "2020-08-17",
     "dateFin": "2020-08-18",
@@ -60,9 +30,9 @@
     "siteWeb": null
   },
   {
-    "_id": "22ndWorldCongresson",
-    "title1": "22nd World Congress on",
-    "title2": "Analytical and Bioanalytical Chemistry",
+    "_id": "13thGlobalExpertsMeetingon",
+    "title1": "13th Global Experts Meeting on",
+    "title2": "Chemistry",
     "date": "August 17-18, 2020",
     "dateDebut": "2020-08-17",
     "dateFin": "2020-08-18",
@@ -165,13 +135,11 @@
     "siteWeb": null
   },
   {
-    "_id": "4thInternationalConferenceon",
-    "title1": "4th International Conference on",
-    "title2": "Head and Neck Treatment",
-    "date": "September 21-22, 2020",
-    "dateDebut": "2020-09-21",
-    "dateFin": "2020-09-22",
-    "lieu": "Webinar",
+    "_id": null,
+    "title2": null,
+    "date": null,
+    "dateDebut": null,
+    "dateFin": null,
     "city": null,
     "country": null,
     "submitAbstract": null,
@@ -180,11 +148,13 @@
     "siteWeb": null
   },
   {
-    "_id": null,
-    "title2": null,
-    "date": null,
-    "dateDebut": null,
-    "dateFin": null,
+    "_id": "4thInternationalConferenceon",
+    "title1": "4th International Conference on",
+    "title2": "Head and Neck Treatment",
+    "date": "September 21-22, 2020",
+    "dateDebut": "2020-09-21",
+    "dateFin": "2020-09-22",
+    "lieu": "Webinar",
     "city": null,
     "country": null,
     "submitAbstract": null,
@@ -253,9 +223,9 @@
     "siteWeb": null
   },
   {
-    "_id": "10thWorldConferenceon",
-    "title1": "10th World Conference on",
-    "title2": "Separation Techniques & Formulation Reports",
+    "_id": "7thInternationalConferenceon",
+    "title1": "7th International Conference on",
+    "title2": "Physical and Theoretical Chemistry",
     "date": "October 07-08, 2020",
     "dateDebut": "2020-10-07",
     "dateFin": "2020-10-08",
@@ -268,9 +238,9 @@
     "siteWeb": null
   },
   {
-    "_id": "7thInternationalConferenceon",
-    "title1": "7th International Conference on",
-    "title2": "Physical and Theoretical Chemistry",
+    "_id": "10thWorldConferenceon",
+    "title1": "10th World Conference on",
+    "title2": "Separation Techniques & Formulation Reports",
     "date": "October 07-08, 2020",
     "dateDebut": "2020-10-07",
     "dateFin": "2020-10-08",
@@ -463,9 +433,9 @@
     "siteWeb": null
   },
   {
-    "_id": "GlobalMeeton",
-    "title1": "Global Meet on",
-    "title2": "Green and Sustainable Chemistry",
+    "_id": "10thWorldCongresson",
+    "title1": "10th World Congress on",
+    "title2": "Mass Spectrometry & Analytical Techniques",
     "date": "December 07-08, 2020",
     "dateDebut": "2020-12-07",
     "dateFin": "2020-12-08",
@@ -478,9 +448,9 @@
     "siteWeb": null
   },
   {
-    "_id": "10thWorldCongresson",
-    "title1": "10th World Congress on",
-    "title2": "Mass Spectrometry & Analytical Techniques",
+    "_id": "GlobalMeeton",
+    "title1": "Global Meet on",
+    "title2": "Green and Sustainable Chemistry",
     "date": "December 07-08, 2020",
     "dateDebut": "2020-12-07",
     "dateFin": "2020-12-08",
